@@ -15,6 +15,7 @@
 // Calculate the rental fee
 // Increase the stock
 // Return the rental
+const moment = require('moment');
 const request = require('supertest');
 const {Rental } = require('../../models/rental');
 const {User } = require('../../models/user');
@@ -39,6 +40,7 @@ describe('/api/rentals', () => {
 
     customerId = mongoose.Types.ObjectId();
     movieId = mongoose.Types.ObjectId();
+    token = new User().generateAuthToken();
     
     rental = new Rental({
       customer: {
@@ -70,9 +72,10 @@ describe('/api/rentals', () => {
     token = '';
     const res = await exec();
     expect(res.status).toBe(401);
+
   });
 
-  it('should return 400 if customerId is not logged in!', async() => {
+  it('should return 400 if customerId is null!', async() => {
     customerId = '';
 
     const res = await exec();
@@ -80,12 +83,53 @@ describe('/api/rentals', () => {
     expect(res.status).toBe(400);
   });
 
-  it('should return 400 if movieId is not logged in!', async() => {
+  it('should return 400 if movieId is null!', async() => {
     movieId = '';
 
     const res = await exec();
     expect(res.status).toBe(400);
+
+  });
+
+  it('should return 404 if rental not found!', async() => {
+    await Rental.remove({});
+
+    const res = await exec();
+    expect(res.status).toBe(404);
     
   });
+
+  it('should return 400 if rental already processed!', async() => {
+    rental.dateReturned = new Date();
+    await rental.save();
+
+    const res = await exec();
+
+    expect(res.status).toBe(400);
+    
+  });
+
+
+  it('should return 200 if all is ok!', async() => {
+ 
+    const res = await exec();
+
+    expect(res.status).toBe(200);
+    
+  });
+
+  it('should set the returnDate if input is valid', async() => {
+    rental.dateOut = moment().add(-7, 'days').toDate();
+    await rental.save();
+
+    const res = await exec();
+    const rentalInDb = await Rental.findById(rental._id);
+     expect(rentalInDb.rentalFee).toBeDefined();
+  
+    // expect(diff).toBeLessThan(10*1000);
+
+  });
+
+
 
 });

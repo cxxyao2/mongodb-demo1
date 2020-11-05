@@ -481,3 +481,236 @@
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:42:54.952Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:42:55.179Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:42:55.187Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:45:34.018Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:45:34.092Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:45:34.857Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:45:34.918Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:45:35.041Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:45:35.052Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:45.642Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:45.696Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:45.713Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:45.742Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:46.425Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:46.435Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:58.863Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:58.917Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:59.315Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:59.349Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:56:59.545Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:56:59.556Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:57:39.660Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:57:39.691Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:57:39.680Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:57:39.752Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T19:57:40.787Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T19:57:40.797Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:26.124Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:26.150Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:26.152Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:26.176Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:26.214Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:26.254Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:26.257Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:26.306Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:27.374Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:27.397Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:01:27.431Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:01:27.462Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:43.983Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:44.032Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:44.134Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:44.223Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:44.877Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:44.907Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:44.981Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:45.041Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:45.310Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:45.328Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:02:45.447Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:02:45.468Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:46.193Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:46.260Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:46.291Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:46.370Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:46.944Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:46.989Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:47.060Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:47.133Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:47.518Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:47.530Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:03:47.578Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:03:47.606Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:05:50.766Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:05:50.820Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:05:50.821Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:05:50.888Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:05:51.891Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:05:51.901Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:07:01.340Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:07:01.394Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:07:01.853Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:07:01.891Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:07:02.072Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:07:02.098Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:11:47.119Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:11:47.171Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:11:47.599Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:11:47.633Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:11:47.823Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:11:47.835Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:16:15.426Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:16:15.475Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:16:15.473Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:16:15.575Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:16:16.826Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:16:16.850Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:17:43.313Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:17:43.365Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:17:43.789Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:17:43.824Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:17:43.988Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:17:43.998Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:13.243Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:13.300Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:13.759Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:13.792Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:13.941Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:13.951Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:43.626Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:43.682Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:43.731Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:43.780Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:20:44.435Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:20:44.449Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:23:25.663Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:23:25.719Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:23:26.344Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:23:26.351Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:23:26.596Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:23:26.639Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:24:39.026Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:24:39.088Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:24:39.581Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:24:39.624Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:24:39.822Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:24:39.830Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:28:49.462Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:28:49.481Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:28:49.495Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:28:49.547Z"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error","timestamp":"2020-11-05T20:28:49.603Z"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error","timestamp":"2020-11-05T20:28:49.615Z"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error","timestamp":"2020-11-05T20:28:49.643Z"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error","timestamp":"2020-11-05T20:28:49.669Z"}
+{"code":"ERR_HTTP_HEADERS_SENT","level":"error","timestamp":"2020-11-05T20:28:49.699Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:28:50.227Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:28:50.234Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:31.709Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:31.724Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:31.739Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:31.785Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:32.427Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:32.438Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:50.377Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:50.407Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:50.409Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:50.473Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:29:51.133Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:29:51.148Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:38.344Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:38.428Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:38.490Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:38.570Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:39.927Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:39.949Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:47.541Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:47.575Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:47.566Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:47.635Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:33:48.409Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:33:48.418Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:10.502Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:10.557Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:10.991Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:11.026Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:11.179Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:11.192Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:50.428Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:50.471Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:50.481Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:50.559Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:36:51.221Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:36:51.230Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:37:38.284Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:37:38.340Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:37:38.960Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:37:38.967Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:37:39.029Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:37:39.064Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:39:16.347Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:39:16.367Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:39:16.385Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:39:16.437Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:39:17.696Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:39:17.705Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:41:25.105Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:41:25.166Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:41:25.158Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:41:25.241Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:41:26.217Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:41:26.226Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:44:38.696Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:44:38.745Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:44:39.324Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:44:39.472Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:44:40.065Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:44:40.073Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:46:07.903Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:46:07.961Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:46:08.414Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:46:08.452Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:46:08.631Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:46:08.641Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:50:29.972Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:50:30.024Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:50:30.428Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:50:30.463Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:50:30.652Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:50:30.668Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:52:07.923Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:52:07.927Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:52:07.970Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:52:08.007Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:52:08.682Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:52:08.697Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:10.586Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:10.641Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:10.655Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:10.690Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:11.361Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:11.373Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:36.578Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:36.614Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:36.614Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:36.679Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T20:57:37.404Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T20:57:37.412Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:01:41.780Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:01:41.790Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:01:41.811Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:01:41.871Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:01:42.539Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:01:42.548Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:02:12.974Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:02:13.036Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:02:13.053Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:02:13.110Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:02:13.721Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:02:13.732Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:18:13.410Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:18:13.446Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:18:13.978Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:18:14.036Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2020-11-05T21:18:14.428Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises-test'...","timestamp":"2020-11-05T21:18:14.442Z"}
