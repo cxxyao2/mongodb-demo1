@@ -1,51 +1,54 @@
-const mongoose = require('mongoose');
-const config = require('config');
-const morgan = require('morgan');
-const helmet = require('helmet');
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi)
-const logger = require('./middleware/logger');
-const courses = require('./routes/courses');
-const genres = require('./routes/genres');
-const customers = require('./routes/customers');
-const movies = require('./routes/movies');
-const rentals = require('./routes/rentals');
-const home = require('./routes/home');
+
+const winston = require('winston');
 const express = require("express");
 const app = express();
 
-
-mongoose.connect('mongodb://localhost/mongo-exercises',{
+const mongoose = require('mongoose');
+const config = require('config');
+const db= config.get('db');
+mongoose.connect(db,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
   }).then(() => 
-    console.log('MongoDB is connected...'))
-  .catch(error => 
-    console.error("Could not connect to Mongodb... ", error) );
+    winston.info(`Connected to ${db}...`));
+
+const morgan = require('morgan');
+// const helmet = require('helmet');
+const logger = require('./middleware/logger');
+require('./startup/logging')();
+require('./startup/routes')(app);
+//  require('./startup/db')();
+require('./startup/config')();
+require('./startup/validate')();
 
 
 
-app.set('view engine', 'pug');  //  pug: generate a html file with variables 
-app.set('views','./views'); // default folder for views
 
-app.use(express.json()); // use a middleware
-app.use(express.urlencoded({ extended: true}));
-app.use(express.static('public'));  // make a folder public
-app.use(helmet());
-app.use('/api/courses', courses);
-app.use('/api/genres', genres);
-app.use('/api/customers', customers);
-app.use('/api/rentals', rentals);
-app.use('/api/movies', movies);
+  //throw new Error('this is a new error 1020');
+  // const p = Promise.reject(new Error('something !! happend!!!'));
+  // p.then(() => console.log('promise,error'));
 
-app.use('/', home);
+
+// const home = require('./routes/home');
+// app.use(express.urlencoded({ extended: true}));
+// app.use(express.static('public'));  // make a folder public
+// app.use(helmet());
+// app.set('view engine', 'pug');  //  pug: generate a html file with variables 
+// app.set('views','./views'); // default folder for views
+
+// app.use(function(err,req,res,next) {
+//   // Log the exception
+//   res.status(500).send('Something failed');
+// });
+// app.use('/', home);
 
 //Configuration
-console.log('Application name:' + config.get('name'));
-console.log('Mail Server:' + config.get('mail.host'));
-console.log('Mail Password:' + config.get('mail.password'));
+// console.log('Application name:' + config.get('name'));
+// console.log('Mail Server:' + config.get('mail.host'));
+// console.log('Mail Password:' + config.get('mail.password'));
+
 
 
 
@@ -58,12 +61,13 @@ if (app.get('env') === 'development') {
 app.use(logger);
 
 
-app.get('/', (req, res) => {
-  // res.send('Hello World');
-  res.render('index', { title: 'My Express App', message: 'Hello'});
-});
+// app.get('/', (req, res) => {
+//   // res.send('Hello World');
+//   res.render('index', { title: 'My Express App', message: 'Hello'});
+// });
 
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+const server = app.listen(port, () => winston.info(`Listening on port ${port}...`));
+module.exports = server;
