@@ -3,3 +3,6 @@ coverage/
 
 # macOS
 .DS_Store
+
+# config
+config.MD

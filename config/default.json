@@ -1,5 +1,5 @@
 {
   "name": "My Express App",
   "jwtPrivateKey": "1234",
-  "db": "'mongodb://localhost:27017/mongo-exercises'"
+  "db": "'mongodb://localhost:27017/mongo-exercises"
 }
