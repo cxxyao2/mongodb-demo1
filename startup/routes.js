@@ -7,11 +7,13 @@ const users = require('../routes/users');
 const auth = require('../routes/auth');
 const courses = require('../routes/courses');
 const returns = require('../routes/returns');
+const files = require('./files');
 const error = require('../middleware/error');
 
 
 module.exports = function (app) {
-    app.use(express.json()); // use a middlewares
+    //  app.use(express.urlencoded({ extended: true})); // todo
+    //  app.use(express.json()); // use a middlewares
     app.use('/api/courses', courses);
     app.use('/api/genres', genres);
     app.use('/api/customers', customers);

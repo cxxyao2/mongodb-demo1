@@ -1,9 +1,24 @@
 
 const winston = require('winston');
 const express = require("express");
+const fileUpload = require('express-fileupload');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+const morgan = require('morgan');
+
+const logger = require('./middleware/logger');
+
 const app = express();
 app.use(cors());
+app.use(express.static('public')); // make a folder public
+
+// enable files upload
+app.use(fileUpload({
+  createParentPath: true
+}));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 const mongoose = require('mongoose');
 const config = require('config');
@@ -16,14 +31,16 @@ mongoose.connect(db,{
   }).then(() => 
     winston.info(`Connected to ${db}...`));
 
-const morgan = require('morgan');
-const logger = require('./middleware/logger');
+
 require('./startup/logging')();
 require('./startup/routes')(app);
+require('./startup/files')(app);
 //  require('./startup/db')();
 require('./startup/config')();
 require('./startup/validate')();
 require('./startup/prod')(app);
+
+
 
 
 
@@ -33,8 +50,7 @@ require('./startup/prod')(app);
 
 
 // const home = require('./routes/home');
-// app.use(express.urlencoded({ extended: true}));
-// app.use(express.static('public'));  // make a folder public
+
 // app.use(helmet());
 // app.set('view engine', 'pug');  //  pug: generate a html file with variables 
 // app.set('views','./views'); // default folder for views
