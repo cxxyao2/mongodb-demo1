@@ -2,29 +2,29 @@
 var path = require('path');
 var mime = require('mime');
 var fs = require('fs');
+const express = require('express');
+const router = express.Router();
 
 
-module.exports = function (app) {
-    app.post('/api/file_download', function(req,res) {
-      try {
-        var file = process.cwd() + '/uploads/1606967665262.jpeg';
+router.post('/download', function(req,res) {
+  try {
+    var file = process.cwd() + '/uploads/1606967665262.jpeg';
 
-        var filename = path.basename(file);
-        var mimetype = mime.lookup(file);
+    var filename = path.basename(file);
+    var mimetype = mime.lookup(file);
 
-        res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-        res.setHeader('Content-type', mimetype);
+    res.setHeader('Content-disposition', 'attachment; filename=' + filename);
+    res.setHeader('Content-type', mimetype);
 
-        var fileStream = fs.createReadStream(file);
-        fileStream.pipe(res);
-        //res.status(200).download(process.cwd() + '/uploads/givre2.jpeg','givre2.jpeg');
-        // res.status(200).send('download is ok');
-      } catch (error) {
-         res.status(500).send(err);
-      }
-    });
+    var fileStream = fs.createReadStream(file);
+    fileStream.pipe(res);
+    
+  } catch (error) {
+      res.status(500).send(err);
+  }
+});
   
-  app.post('/api/files', function(req, res) {
+  router.post('/upload', function(req, res) {
     try {
         if(!req.files) {
             res.send({
@@ -54,4 +54,7 @@ module.exports = function (app) {
     }
 
   });
-}
+
+
+
+module.exports = router;

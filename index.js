@@ -22,22 +22,11 @@ app.use(fileUpload({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-const mongoose = require('mongoose');
-const config = require('config');
-const db= config.get('db');
-mongoose.connect(db,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  }).then(() => 
-    winston.info(`Connected to ${db}...`));
 
 
 require('./startup/logging')();
 require('./startup/routes')(app);
-require('./startup/files')(app);
-//  require('./startup/db')();
+require('./startup/db')();
 require('./startup/config')();
 require('./startup/validate')();
 require('./startup/prod')(app);

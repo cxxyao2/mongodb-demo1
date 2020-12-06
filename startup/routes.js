@@ -7,13 +7,12 @@ const users = require('../routes/users');
 const auth = require('../routes/auth');
 const courses = require('../routes/courses');
 const returns = require('../routes/returns');
-const files = require('./files');
+const files = require('../routes/files');
+const itineraries = require('../routes/itineraries');
 const error = require('../middleware/error');
 
 
 module.exports = function (app) {
-    //  app.use(express.urlencoded({ extended: true})); // todo
-    //  app.use(express.json()); // use a middlewares
     app.use('/api/courses', courses);
     app.use('/api/genres', genres);
     app.use('/api/customers', customers);
@@ -21,6 +20,8 @@ module.exports = function (app) {
     app.use('/api/movies', movies);
     app.use('/api/users', users);
     app.use('/api/returns', returns);
+    app.use('/api/itineraries', itineraries);
+    app.use('/api/files', files);
     app.use('/api/auth', auth);
     app.use(error);
   }
