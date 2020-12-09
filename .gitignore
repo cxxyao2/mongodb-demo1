@@ -3,6 +3,7 @@ coverage/
 uploads/
 config/
 tmp/
+utils/
 
 # macOS
 .DS_Store

@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.post('/download', function(req,res) {
+router.get('/download', function(req,res) {
   try {
     var file = process.cwd() + '/uploads/1606967665262.jpeg';
 
