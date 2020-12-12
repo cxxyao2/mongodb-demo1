@@ -1467,3 +1467,16 @@
 {"message":"Arguments must be aggregate pipeline operators","stack":"Error: Arguments must be aggregate pipeline operators\n    at Aggregate.append (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/aggregate.js:142:11)\n    at new Aggregate (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/aggregate.js:56:17)\n    at Function.aggregate (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/model.js:3949:21)\n    at /Users/admin/mycode/products/express_server1/routes/itineraries.js:91:19","level":"error","timestamp":"2020-12-09T01:48:37.380Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-09T01:51:30.903Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-09T01:51:30.951Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-09T20:09:37.179Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-09T20:09:37.273Z"}
+{"message":"user is not defined","stack":"ReferenceError: user is not defined\n    at /Users/admin/mycode/products/express_server1/routes/users.js:15:12","level":"error","timestamp":"2020-12-09T20:10:19.123Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-09T20:11:25.654Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-09T20:11:25.685Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-09T22:35:19.495Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-09T22:35:19.543Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-10T03:48:28.093Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-10T03:48:28.153Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-11T03:38:13.917Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-11T03:38:14.075Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-12-11T21:00:57.367Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2020-12-11T21:00:57.444Z"}

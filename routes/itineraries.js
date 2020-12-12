@@ -4,7 +4,6 @@ const express = require("express");
 const router = express.Router();
 
 const { Itinerary, validate } = require("../models/itinerary");
-const aggregate = require("../models/aggregate_itinerary");
 const { User } = require("../models/user"); // salesman must be a valid user
 const { Customer } = require("../models/customer");
 const admin = require("../middleware/admin");
