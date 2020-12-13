@@ -64,7 +64,7 @@ router.get("/", async (req, res) => {
           _id: {
             salesmanName: "$salesmanName",
             customerName: "$customers.name",
-            customerRegin: "$customers.region",
+            customerRegion: "$customers.region",
             month: { $month: "$visitDate" },
             year: { $year: "$visitDate" },
           },
@@ -82,7 +82,26 @@ router.get("/", async (req, res) => {
         console.log("err is ", err);
         return;
       }
-      data.byCustomerNameDate = docs;
+      let result = [];
+      docs.map((doc) => {
+        const {
+          salesmanName,
+          customerName,
+          customerRegion,
+          month,
+          year,
+        } = doc._id;
+        result.push({
+          salesmanName: salesmanName,
+          month: month,
+          year: year,
+          customerName: customerName,
+          customerRegion: customerRegion,
+          count: doc.visitNum,
+        });
+      });
+      console.log("result is ", result);
+      data.byCustomerNameDate = result;
       // console.log(data);
     }
   );
@@ -93,6 +112,20 @@ router.get("/", async (req, res) => {
         $match: {
           salesmanName: salesmanName,
           visitDate: { $gte: startYYMMDD, $lte: endYYMMDD },
+        },
+      },
+      {
+        $lookup: {
+          from: "customers",
+          localField: "customerName",
+          foreignField: "name",
+          as: "customers",
+        },
+      },
+      {
+        $unwind: {
+          path: "$customers",
+          preserveNullAndEmptyArrays: true,
         },
       },
       { $addFields: { visitFlag: 1 } },
@@ -130,8 +163,20 @@ router.get("/", async (req, res) => {
         console.log("err is ", err);
         return;
       }
-      data.byLocationNameDate = docs;
-      // console.log(data);
+      let result = [];
+      docs.map((doc) => {
+        const { salesmanName, month, year, latitude, longitude } = doc._id;
+        result.push({
+          salesmanName: salesmanName,
+          month: month,
+          year: year,
+          latitude: latitude,
+          longitude: longitude,
+          count: doc.visitNum,
+        });
+      });
+
+      data.byLocationNameDate = result;
     }
   );
 
