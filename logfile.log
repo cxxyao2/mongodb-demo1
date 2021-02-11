@@ -1518,3 +1518,19 @@
 {"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-15T03:11:33.655Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-15T03:11:33.695Z"}
 {"message":"Unexpected token } in JSON at position 154","stack":"SyntaxError: Unexpected token } in JSON at position 154\n    at JSON.parse (<anonymous>)\n    at parse (/Users/admin/mycode/products/express_server1/node_modules/body-parser/lib/types/json.js:89:19)\n    at /Users/admin/mycode/products/express_server1/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:224:16)\n    at done (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (_stream_readable.js:1220:12)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)","expose":true,"statusCode":400,"status":400,"body":"{\n    \"customerId\":\"5f9e31e1ad9cfb1ef829357f\",\n    \"productId\":\"60010569ffa4a7376471d656\",\n    \"quantity\":\"3\",\n    \"price\":\"1.2\",\n    \"coupon\":\"add-122\",\n}","type":"entity.parse.failed","level":"error","timestamp":"2021-01-15T03:25:08.591Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-15T03:26:24.029Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-15T03:26:24.061Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-16T20:26:53.492Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-16T20:26:53.551Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-17T03:19:46.699Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-17T03:19:46.730Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-17T13:52:08.808Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-17T13:52:08.985Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-01-28T00:28:04.565Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-01-28T00:28:04.624Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-08T21:19:38.047Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-08T21:19:38.189Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-11T03:17:20.784Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-11T03:17:20.887Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-11T03:40:00.223Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-11T03:40:00.264Z"}

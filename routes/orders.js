@@ -30,10 +30,7 @@ router.post("/", async (req, res) => {
     product: req.body.productId,
     quantity: req.body.quantity,
     price: req.body.price,
-    coupon: req.body.coupon,
-    customerPaid: req.body.customerPaid,
-    enRoute: req.body.enRoute,
-    customerReceived: req.body.customerReceived,
+    coupon: req.body.coupon
   });
   await order.save();
   res.send(order);

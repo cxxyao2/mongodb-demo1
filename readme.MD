@@ -1,3 +1,7 @@
+# start the application
+
+$node index.js
+
 # DEBUG package 与环境变量的配合使用
 
 const startupDebugger = require('debug')('app:startup');

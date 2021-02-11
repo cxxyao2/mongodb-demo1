@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
   },
   isAdmin: Boolean,
   department: String,
+  region: String
 });
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
