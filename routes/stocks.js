@@ -9,7 +9,19 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const stocks = await Stock.find();
+    let stocks = undefined;
+    if (req.query.area) {
+      // await MyModel.find({ name: 'john', age: { $gte: 18 } }).exec();
+      stocks = await Stock.find({ area: req.query.area })
+        .populate("area")
+        .populate("product");
+    } else {
+      stocks = await Stock.find()
+        .populate("area")
+        .populate("product")
+        .sort("expiredDate");
+    }
+
     res.send(stocks);
   } catch (error) {
     next(error);
@@ -20,12 +32,11 @@ router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-    const area = await Stockarea.findById(req.body.areaId);
-    if (!area) return res.status(400).send("Invalid stock area.");
+  const area = await Stockarea.findById(req.body.areaId);
+  if (!area) return res.status(400).send("Invalid stock area.");
 
-    const product = await Product.findById(req.body.productId);
-    if (!product) return res.status(400).send("Invalid product.");
-
+  const product = await Product.findById(req.body.productId);
+  if (!product) return res.status(400).send("Invalid product.");
 
   let stock = new Stock({
     area: req.body.areaId,

@@ -6,7 +6,10 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const stockSchema = new mongoose.Schema({
-  area: mongoose.Schema.Types.ObjectId,
+  area: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Stockarea",
+  },
   product: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Product",

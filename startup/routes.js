@@ -13,6 +13,8 @@ const orders = require("../routes/orders");
 const products = require("../routes/products");
 const categories = require("../routes/categories");
 const stocks = require("../routes/stocks");
+const stockareas = require("../routes/stockareas");
+
 const error = require("../middleware/error");
 
 module.exports = function (app) {
@@ -29,6 +31,7 @@ module.exports = function (app) {
   app.use("/api/products", products);
   app.use("/api/categories", categories);
   app.use("/api/stocks", stocks);
+  app.use("/api/stockareas", stockareas);
   app.use("/api/auth", auth);
   app.use(error);
 };
