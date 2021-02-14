@@ -27,7 +27,10 @@ router.post("/", async (req, res) => {
   const product = await Product.findById(req.body.productId);
   if (!product) return res.status(400).send("Invalid product.");
 
-  const stock = await Stock.findOne({ product: req.body.productId });
+  const stock = await Stock.findOne({
+    product: req.body.productId,
+    quantity: { $gte: 0 },
+  });
 
   if (stock === undefined) {
     return res.status(400).send("No stock available.");

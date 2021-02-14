@@ -30,7 +30,11 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", auth, async (req, res) => {
   const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+
+  if (error) {
+    console.log("error is ", error);
+    return res.status(400).send(error.details[0].message);
+  }
 
   const area = await Stockarea.findById(req.body.areaId);
   if (!area) return res.status(400).send("Invalid stock area.");
@@ -42,7 +46,7 @@ router.post("/", auth, async (req, res) => {
     area: req.body.areaId,
     product: req.body.productId,
     quantity: req.body.quantity,
-    expiredDate: req.body.eDate,
+    expiredDate: req.body.expiredDate,
   });
   stock = await stock.save();
 
@@ -51,9 +55,13 @@ router.post("/", auth, async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
 
-  const stock = await Genre.findByIdAndUpdate(
+  if (error) {
+    console.log("error is ", error);
+    return res.status(400).send(error.details[0].message);
+  }
+
+  const stock = await Stock.findByIdAndUpdate(
     req.params.id,
     { quantity: req.body.quantity },
     {

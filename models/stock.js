@@ -33,8 +33,8 @@ function validateStock(stock) {
   const schema = Joi.object({
     areaId: Joi.objectId().required(),
     productId: Joi.objectId().required(),
-    quantity: Joi.number().required().min(0).max(250),
-    eDate: Joi.date().required(),
+    quantity: Joi.number().required().min(0).max(9999),
+    expiredDate: Joi.date().required(),
   });
 
   return schema.validate(stock);
