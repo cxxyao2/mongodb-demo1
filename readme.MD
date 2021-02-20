@@ -26,3 +26,12 @@ deDebugger('Connected to the database...');
 ## shortcut running with debugging
 
 \$DEBGU=app:db nodemon index.js
+
+## unit test user
+
+{
+   
+    "email": "88888888@gmail.com",
+    "password":"123456788"
+}
+}

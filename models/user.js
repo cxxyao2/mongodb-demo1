@@ -25,7 +25,21 @@ const userSchema = new mongoose.Schema({
   },
   isAdmin: Boolean,
   department: String,
-  region: String
+  region: String,
+  failedCount: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 1,
+    default: 0,
+  },
+  validity: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 1,
+    default: 1,
+  },
 });
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
