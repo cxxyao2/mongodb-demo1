@@ -30,8 +30,21 @@ deDebugger('Connected to the database...');
 ## unit test user
 
 {
-   
+
     "email": "88888888@gmail.com",
-    "password":"123456788"
+    "password":"12345678"
+
 }
+}
+----------------
+{
+"name" : "77777777",
+"email": "77777777@gmail.com",
+"password":"77777777"
+}
+
+{
+"\_id": "6031c5db1f6b612ad4af5357",
+"name": "77777777",
+"email": "77777777@gmail.com"
 }

@@ -3,9 +3,10 @@ const config = require("config");
 const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const { User } = require("../models/user");
-const { ResetPwdToken, validate } = require("../models/resetPwdToken");
+const { ResetPwdToken } = require("../models/resetPwdToken");
 const express = require("express");
 const jwt = require("jsonwebtoken");
+const moment = require("moment");
 const router = express.Router();
 const { sendResetPwdEmail } = require("../startup/email.js");
 
@@ -17,21 +18,26 @@ router.post("/", async (req, res) => {
 
   let user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(400).send("Invalid email or password");
+  if (user.validity === 0) return res.status(400).send(lockedMessage);
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) {
     let { failedCount } = user;
     failedCount += 1;
-    user.failedCount = failedCount;
-    if (failedCount >= Number(config.get("pwdTryMax"))) {
+
+    if (failedCount > Number(config.get("pwdTryMax"))) {
       user.validity = 0;
+    } else {
+      user.failedCount = failedCount;
     }
     await user.save();
-    return res.status(400).send("Invalid email or password.");
+    if (user.validity === 1) {
+      return res.status(400).send("Invalid email or password.");
+    } else {
+      // email and password are correct.but account is locked.
+      return res.status(400).send(lockedMessage);
+    }
   }
-
-  // email and password are correct.but account is locked.
-  if (user.validity === 0) return res.status(400).send(lockedMessage);
 
   const token = user.generateAuthToken();
   res.send(token);
@@ -57,12 +63,17 @@ router.put("/", async (req, res) => {
 
 // send reset password Email
 router.post("/email/resetpassword", async (req, res) => {
-  const email = req.query.email;
+  const email = req.body.email;
   const token = jwt.sign({ email: email }, config.get("jwtPrivateKey"));
-  let url = `http://localhost:5000/password/reset?token=${token}`;
+  let url = `http://localhost:5000/auth/password/reset?token=${token}`;
   try {
     const tokenRecord = new ResetPwdToken();
     tokenRecord.token = token;
+    tokenRecord.createDate = moment();
+    tokenRecord.expireDate = moment().add(
+      config.get("tokenExpiredMinute"),
+      "minutes"
+    );
     await tokenRecord.save();
     await sendResetPwdEmail(url);
     return res.status(200).send("A reset password email has been sent.");
@@ -72,7 +83,7 @@ router.post("/email/resetpassword", async (req, res) => {
 });
 
 // reset password by token. ResetPwdToken
-// http://xx.xxx.xx.xxx/password/reset?token=xxxxx
+// http://xx.xxx.xx.xxx：5000/api/auth/password/reset?token=xxxxx
 router.post("/password/reset", async (req, res) => {
   const token = req.query.token;
   if (!token) return res.status(400).send("Invalid token.");
@@ -85,8 +96,9 @@ router.post("/password/reset", async (req, res) => {
     return res.status(400).send("Token expired.");
 
   var decoded = jwt.verify(token, config.get("jwtPrivateKey"));
-  console.log(decoded.payload);
-  let email = decoded.payload.email;
+
+  console.log(decoded);
+  let email = decoded.email;
   let user = await User.findOne({ email: email });
 
   const salt = await bcrypt.genSalt(10);
@@ -98,7 +110,6 @@ router.post("/password/reset", async (req, res) => {
   tokenRecord.isExpired = 1;
   await tokenRecord.save();
 
-  const token = user.generateAuthToken();
   res.status(200).send("Password is reset successfully.");
 });
 

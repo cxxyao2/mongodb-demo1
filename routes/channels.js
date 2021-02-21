@@ -4,10 +4,11 @@ const express = require("express");
 const admin = require("../middleware/admin");
 const auth = require("../middleware/auth");
 const router = express.Router();
+const moment = require("moment");
 
 router.get("/", async (req, res) => {
-  const Channels = await Channel.find().sort("name");
-  res.send(Channels);
+  const channels = await Channel.find().sort("name");
+  res.send(channels);
 });
 
 router.post("/", async (req, res) => {
@@ -17,35 +18,36 @@ router.post("/", async (req, res) => {
   const responsible = await User.findById(req.body.responsible);
   if (!responsible) return res.status(400).send("Invalid responsible.");
 
+  let collaborator;
   if (req.body.collaborator) {
-    const collaborator = await User.findById(req.body.collaborator);
+    collaborator = await User.findById(req.body.collaborator);
     if (!collaborator) return res.status(400).send("Invalid collaborator.");
   }
 
-  const {
+  const { name, address, contactPerson, phone, email, level } = req.body;
+  const channel = new Channel({
     name,
     address,
-    concatPerson,
+    contactPerson,
     phone,
     email,
     level,
-    closeReason,
-    reasonDetails,
-  } = req.body;
-  const Channel = new Channel({
-    name,
-    address,
-    concatPerson,
-    phone,
-    email,
-    level,
-    closeReason,
-    reasonDetails,
-    responsible,
-    collaborator,
+    responsible: responsible._id,
   });
-  await Channel.save();
-  res.send(Channel);
+  if (collaborator) {
+    channel.collaborator = collaborator._id;
+  }
+
+  if (closeReason) {
+    channel.closeReason = closeReason;
+  }
+
+  if (reasonDetails) {
+    channel.reasonDetails = reasonDetails;
+  }
+
+  await channel.save();
+  res.send(channel);
 });
 
 router.put("/:id", async (req, res) => {
@@ -55,21 +57,23 @@ router.put("/:id", async (req, res) => {
   const {
     name,
     address,
-    concatPerson,
+    contactPerson,
     phone,
     email,
     level,
     closeReason,
     reasonDetails,
-    updateDate,
+    responsible,
+    collaborator,
   } = req.body;
 
-  const Channel = await Channel.findByIdAndUpdate(
+  const updateDate = moment();
+  const channel = await Channel.findByIdAndUpdate(
     req.params.id,
     {
       name,
       address,
-      concatPerson,
+      contactPerson,
       phone,
       email,
       level,
@@ -84,28 +88,28 @@ router.put("/:id", async (req, res) => {
     }
   );
 
-  if (!Channel)
+  if (!channel)
     return res.status(404).send("The Channel with the given ID was not found.");
 
-  res.send(Channel);
+  res.send(channel);
 });
 
 router.delete("/:id", [auth, admin], async (req, res) => {
-  const Channel = await Channel.findByIdAndRemove(req.params.id);
+  const channel = await Channel.findByIdAndRemove(req.params.id);
 
-  if (!Channel)
+  if (!channel)
     return res.status(404).send("The Channel with the given ID was not found.");
 
-  res.send(Channel);
+  res.send(channel);
 });
 
 router.get("/:id", async (req, res) => {
-  const Channel = await Channel.findById(req.params.id);
+  const channel = await Channel.findById(req.params.id);
 
-  if (!Channel)
+  if (!channel)
     return res.status(404).send("The Channel with the given ID was not found.");
 
-  res.send(Channel);
+  res.send(channel);
 });
 
 module.exports = router;

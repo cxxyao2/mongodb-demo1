@@ -56,7 +56,7 @@ async function sendResetPwdEmail(url) {
     to: "jenniferyao1996@qq.com, jenniferyao1996@hotmail.com", // list of receivers
     subject: "Hello ✔", // Subject line
     text: "Hello world?", // plain text body
-    html: "<b>Hello world?</b>", // html body
+    html: `<b>Hello world?<a href="${url}" target="_blank" rel="noopener noreferrer">click it</a></b>`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);

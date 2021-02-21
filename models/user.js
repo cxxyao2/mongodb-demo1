@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 0,
-    max: 1,
+    max: 3,
     default: 0,
   },
   validity: {

@@ -40,5 +40,5 @@ function validateToken(token) {
 
   return schema.validate(token);
 }
-exports.validate = validateToken;
+exports.validateToken = validateToken;
 exports.ResetPwdToken = ResetPwdToken;

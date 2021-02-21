@@ -76,15 +76,14 @@ function validateChannel(Channel) {
   const schema = Joi.object({
     name: Joi.string().min(5).max(50).required(),
     address: Joi.string().min(5).max(200).required(),
-    concatPerson: Joi.string().min(5).max(50).required(),
+    contactPerson: Joi.string().min(5).max(50).required(),
     phone: Joi.string().min(5).max(50).required(),
-    email: Joi.email().required(),
+    email: Joi.string().email().required(),
     level: Joi.number().min(1).max(4).required(),
-    closeReason: Joi.number().min(1).max(3).required(),
+    closeReason: Joi.number().min(1).max(3),
     reasonDetails: Joi.string().min(5).max(50),
     responsible: Joi.objectId().required(),
     collaborator: Joi.objectId(),
-    updateDate: Joi.date(),
   });
 
   return schema.validate(Channel);
