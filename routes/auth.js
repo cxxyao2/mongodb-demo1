@@ -61,11 +61,11 @@ router.put("/", async (req, res) => {
   res.send(user);
 });
 
-// send reset password Email
-router.post("/email/resetpassword", async (req, res) => {
+// send reset password Email TODO
+router.post("/send-reset-email", async (req, res) => {
   const email = req.body.email;
   const token = jwt.sign({ email: email }, config.get("jwtPrivateKey"));
-  let url = `http://localhost:5000/auth/password/reset?token=${token}`;
+  let url = `http://localhost:5000/api/auth/password/reset?token=${token}`;
   try {
     const tokenRecord = new ResetPwdToken();
     tokenRecord.token = token;
@@ -78,13 +78,13 @@ router.post("/email/resetpassword", async (req, res) => {
     await sendResetPwdEmail(url);
     return res.status(200).send("A reset password email has been sent.");
   } catch (error) {
-    return res.status(500).send(error.message);
+    return res.status(400).send(error.message);
   }
 });
 
 // reset password by token. ResetPwdToken
-// http://xx.xxx.xx.xxx：5000/api/auth/password/reset?token=xxxxx
-router.post("/password/reset", async (req, res) => {
+// http://xx.xxx.xx.xxx：5000/api/auth/reset-password?token=xxxxx
+router.post("/reset-password", async (req, res) => {
   const token = req.query.token;
   if (!token) return res.status(400).send("Invalid token.");
 
