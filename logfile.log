@@ -1698,3 +1698,9 @@
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-22T04:49:29.903Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-22T05:20:06.116Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-22T05:20:06.146Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-22T21:54:45.167Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-22T21:54:45.384Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-26T03:05:46.216Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-26T03:05:46.308Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-28T16:20:24.930Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-28T16:20:25.006Z"}

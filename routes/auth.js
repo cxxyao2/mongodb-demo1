@@ -97,7 +97,7 @@ router.post("/reset-password", async (req, res) => {
 
   var decoded = jwt.verify(token, config.get("jwtPrivateKey"));
 
-  console.log(decoded);
+  
   let email = decoded.email;
   let user = await User.findOne({ email: email });
 

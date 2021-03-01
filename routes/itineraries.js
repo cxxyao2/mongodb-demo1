@@ -194,23 +194,25 @@ router.post("/", async (req, res) => {
     latitude,
     longitude,
     visitDate,
+    visitNote
   } = req.body;
 
   const salesman = await User.findById(salesmanId);
   if (!salesman) return res.status(400).send("Invalid salesman.");
 
-  const customerOld = await Customer.findOne({ name: customerName });
+  const customerOld = await Customer.find({name:customerName});
   const customerId = customerOld ? customerOld._id : null;
 
   let itinerary = new Itinerary({
-    salesmanId: salesmanId,
+    salesmanId,
     salesmanName: salesman.name,
-    customerId: customerId,
-    customerName: customerName,
-    latitude: latitude,
-    longitude: longitude,
-    photoName: photoName,
-    visitDate: visitDate,
+    customerId,
+    customerName,
+    latitude,
+    longitude,
+    photoName,
+    visitDate,
+    visitNote,
     createdDate: new Date(),
     updatedDate: new Date(),
   });
@@ -259,6 +261,7 @@ router.put("/:id", async (req, res) => {
     latitude,
     longitude,
     visitDate,
+    visitNote
   } = req.body;
 
   let itinerary = await Itinerary.findById(req.params.id);
@@ -277,6 +280,7 @@ router.put("/:id", async (req, res) => {
   itinerary.customerName = customerName;
   if (visitDate) itinerary.visitDate = visitDate;
   itinerary.photoName = photoName;
+  itineray.visitNote = visitNote;
   itinerary = await itinerary.save({});
   res.send(itinerary);
 });
