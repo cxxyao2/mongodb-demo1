@@ -10,7 +10,8 @@ const admin = require("../middleware/admin");
 const auth = require("../middleware/auth");
 const { convertStringToDate } = require("../utils/format_convert");
 
-router.get("/", async (req, res) => {
+// xxxx.xxxx.xxxx.xxx:xxx/itineriers/report?fromdata=yyyymmdd&&todate=yyyymmdd
+router.get("/report", async (req, res) => {
   let itineraries = {};
   if (!req.query.fromdate) {
     itineraries = await Itinerary.find().sort("visitDate");
@@ -189,33 +190,65 @@ router.post("/", async (req, res) => {
 
   let {
     salesmanId,
-    customerName,
+    customerId,
     photoName,
     latitude,
     longitude,
     visitDate,
-    visitNote
+    activities,
+    visitNote,
   } = req.body;
 
   const salesman = await User.findById(salesmanId);
   if (!salesman) return res.status(400).send("Invalid salesman.");
 
-  const customerOld = await Customer.find({name:customerName});
-  const customerId = customerOld ? customerOld._id : null;
+  const customerOld = await Customer.findById(customerId);
+  if (!customerOld) return res.status(400).send("Invalid customer.");
 
-  let itinerary = new Itinerary({
-    salesmanId,
-    salesmanName: salesman.name,
-    customerId,
-    customerName,
-    latitude,
-    longitude,
-    photoName,
-    visitDate,
-    visitNote,
-    createdDate: new Date(),
-    updatedDate: new Date(),
+  let itinerary = undefined;
+  const startYYYYMMDD = convertStringToDate(visitDate, 0, 0, 0);
+  const endYYYYMMDD = convertStringToDate(visitDate, 0, 0, 0); // TODO + 1
+  // likes : {$lt :200, $gt : 100}
+  itinerary = await Itinerary.findOne({
+    salesmanId: salesmanId,
+    customerId: customerId,
+    visitDate: { $gte: startYYYYMMDD, $lt: endYYYYMMDD },
   });
+  if (itinerary) {
+    if (latitude) {
+      itinerary.latitude = latitude;
+    }
+    if (longitude) {
+      itinerary.longitude = longitude;
+    }
+    if (customer) {
+      itinerary.customerName = customer.name;
+    }
+    if (photoName) {
+      itinerary.photoName = photoName;
+    }
+    if (visitNote) {
+      itinerary.visitNote = visitNote;
+    }
+    if (activities) {
+      itinerary.activities = activities;
+    }
+  } else {
+    itinerary = new Itinerary({
+      salesmanId,
+      salesmanName: salesman.name,
+      customerId,
+      customerName: customerOld.name,
+      latitude,
+      longitude,
+      photoName,
+      visitDate: new Date(),
+      visitNote,
+      activities,
+      createdDate: new Date(),
+      updatedDate: new Date(),
+    });
+  }
 
   if (!customerOld) {
     itinerary = await itinerary.save();
@@ -256,12 +289,13 @@ router.put("/:id", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
   let {
     salesmanId,
-    customerName,
+    customerId,
     photoName,
     latitude,
     longitude,
     visitDate,
-    visitNote
+    visitNote,
+    activities,
   } = req.body;
 
   let itinerary = await Itinerary.findById(req.params.id);
@@ -272,15 +306,31 @@ router.put("/:id", async (req, res) => {
   const salesman = await User.findById(salesmanId);
   if (!salesman) return res.status(400).send("Invalid salesman.");
 
-  const customer = itinerary.customer;
+  const customer = await Customer.findById(customerId);
   if (!customer)
     return res.status(404).send("The itinerary without a valid customer.");
-  itinerary.latitude = latitude;
-  itinerary.longitude = longitude;
-  itinerary.customerName = customerName;
+
+  if (latitude) {
+    itinerary.latitude = latitude;
+  }
+  if (longitude) {
+    itinerary.longitude = longitude;
+  }
+  if (customer) {
+    itinerary.customerName = customer.name;
+  }
+
   if (visitDate) itinerary.visitDate = visitDate;
-  itinerary.photoName = photoName;
-  itineray.visitNote = visitNote;
+  if (photoName) {
+    itinerary.photoName = photoName;
+  }
+  if (visitNote) {
+    itinerary.visitNote = visitNote;
+  }
+  if (activities) {
+    itenerary.activities = activities;
+  }
+
   itinerary = await itinerary.save({});
   res.send(itinerary);
 });

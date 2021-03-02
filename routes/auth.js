@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
   if (user.validity === 0) return res.status(400).send(lockedMessage);
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
+
   if (!validPassword) {
     let { failedCount } = user;
     failedCount += 1;
@@ -32,9 +33,10 @@ router.post("/", async (req, res) => {
     }
     await user.save();
     if (user.validity === 1) {
+      // password is not correct but account is not locked . can try again
       return res.status(400).send("Invalid email or password.");
     } else {
-      // email and password are correct.but account is locked.
+      // password is not correct and  account is locked.
       return res.status(400).send(lockedMessage);
     }
   }
