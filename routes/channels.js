@@ -47,6 +47,9 @@ router.post("/", async (req, res) => {
   }
 
   await channel.save();
+  // TODO  保存到客户名单，第一次保存是临时客户
+
+
   res.send(channel);
 });
 

@@ -27,8 +27,8 @@ router.get('/download', function(req,res) {
 });
   
   router.post('/upload', function(req, res) {
-    // 一个一个客户加一个销售员只能有一条记录
-    // fileName: yyyymmdd (Userid last 5 numbers)(Client 5 number) .jpeg,e,g 20210301abced.jpeg
+    // 一天一个客户加一个销售员只能有一条有效记录
+    // fileName: yyyymmdd (Userid last 5 numbers)(Client 5 number) .jpeg,e,g 20210301abcedabced.jpeg
     try {
         if(!req.files) {
             res.send({

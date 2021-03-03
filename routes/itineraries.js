@@ -2,6 +2,7 @@ const Fawn = require("fawn");
 // Fawn.init(mongoose);
 const express = require("express");
 const router = express.Router();
+const  moment = require(“moment”);
 
 const { Itinerary, validate } = require("../models/itinerary");
 const { User } = require("../models/user"); // salesman must be a valid user
@@ -206,15 +207,15 @@ router.post("/", async (req, res) => {
   if (!customerOld) return res.status(400).send("Invalid customer.");
 
   let itinerary = undefined;
-  const startYYYYMMDD = convertStringToDate(visitDate, 0, 0, 0);
-  const endYYYYMMDD = convertStringToDate(visitDate, 0, 0, 0); // TODO + 1
-  // likes : {$lt :200, $gt : 100}
+  const startDate =convertStringToDate(moment(visitDate).format("YYYY-MM-DD"),0,0,0);
+  const endDate = startDate.add(1,'days');
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,
-    visitDate: { $gte: startYYYYMMDD, $lt: endYYYYMMDD },
+    visitDate: { $gte: startDate, $lt: endDate },
   });
   if (itinerary) {
+    // visitDate 不许更新,只能创建一次
     if (latitude) {
       itinerary.latitude = latitude;
     }
@@ -242,7 +243,7 @@ router.post("/", async (req, res) => {
       latitude,
       longitude,
       photoName,
-      visitDate: new Date(),
+      visitDate,
       visitNote,
       activities,
       createdDate: new Date(),
@@ -293,7 +294,6 @@ router.put("/:id", async (req, res) => {
     photoName,
     latitude,
     longitude,
-    visitDate,
     visitNote,
     activities,
   } = req.body;
@@ -320,7 +320,6 @@ router.put("/:id", async (req, res) => {
     itinerary.customerName = customer.name;
   }
 
-  if (visitDate) itinerary.visitDate = visitDate;
   if (photoName) {
     itinerary.photoName = photoName;
   }
