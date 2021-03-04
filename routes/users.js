@@ -11,8 +11,8 @@ router.get("/:id", auth, async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const users = await User.find({ department: req.query.department }).select(
-    "_id name"
+  const users = await User.find().select(
+    "_id name region"
   );
   res.send(users);
 });

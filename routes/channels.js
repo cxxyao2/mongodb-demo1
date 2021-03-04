@@ -7,7 +7,18 @@ const router = express.Router();
 const moment = require("moment");
 
 router.get("/", async (req, res) => {
-  const channels = await Channel.find().sort("name");
+   const channels = undefined;
+  
+    let {name} = req.query;
+    if (name) {
+  
+// 列name 中包含参数name，不区分大小写
+   channels = await Channel.findOne({name:{$regex:name,$options:"$i"}}).sort("name");
+    } else {
+
+   channels = await Channel.find().sort("name");
+    }
+
   res.send(channels);
 });
 
@@ -47,9 +58,6 @@ router.post("/", async (req, res) => {
   }
 
   await channel.save();
-  // TODO  保存到客户名单，第一次保存是临时客户
-
-
   res.send(channel);
 });
 

@@ -15,7 +15,7 @@ const { convertStringToDate } = require("../utils/format_convert");
 router.get("/report", async (req, res) => {
   let itineraries = {};
   if (!req.query.fromdate) {
-    itineraries = await Itinerary.find().sort("visitDate");
+    itineraries = await Itinerary.find().sort("visitStart");
     return res.send(itineraries);
   }
 
@@ -33,7 +33,7 @@ router.get("/report", async (req, res) => {
       {
         $match: {
           salesmanName: salesmanName,
-          visitDate: { $gte: startYYMMDD, $lte: endYYMMDD },
+          visitStart: { $gte: startYYMMDD, $lte: endYYMMDD },
         },
       },
       {
@@ -57,7 +57,7 @@ router.get("/report", async (req, res) => {
           salesmanName: 1,
           "customers.name": 1,
           "customers.region": 1,
-          visitDate: 1,
+          visitStart: 1,
           visitFlag: 1,
         },
       },
@@ -67,8 +67,8 @@ router.get("/report", async (req, res) => {
             salesmanName: "$salesmanName",
             customerName: "$customers.name",
             customerRegion: "$customers.region",
-            month: { $month: "$visitDate" },
-            year: { $year: "$visitDate" },
+            month: { $month: "$visitStart" },
+            year: { $year: "$visitStart" },
           },
           visitNum: { $sum: "$visitFlag" },
         },
@@ -113,7 +113,7 @@ router.get("/report", async (req, res) => {
       {
         $match: {
           salesmanName: salesmanName,
-          visitDate: { $gte: startYYMMDD, $lte: endYYMMDD },
+          visitStart: { $gte: startYYMMDD, $lte: endYYMMDD },
         },
       },
       {
@@ -136,7 +136,7 @@ router.get("/report", async (req, res) => {
           salesmanName: 1,
           "customers.name": 1,
           "customers.region": 1,
-          visitDate: 1,
+          visitStart: 1,
           latitude: 1,
           longitude: 1,
           visitFlag: 1,
@@ -146,8 +146,8 @@ router.get("/report", async (req, res) => {
         $group: {
           _id: {
             salesmanName: "$salesmanName",
-            month: { $month: "$visitDate" },
-            year: { $year: "$visitDate" },
+            month: { $month: "$visitStart" },
+            year: { $year: "$visitStart" },
             latitude: "$latitude",
             longitude: "$longitude",
           },
@@ -195,7 +195,8 @@ router.post("/", async (req, res) => {
     photoName,
     latitude,
     longitude,
-    visitDate,
+    visitStart,
+    visitEnd,
     activities,
     visitNote,
   } = req.body;
@@ -207,15 +208,15 @@ router.post("/", async (req, res) => {
   if (!customerOld) return res.status(400).send("Invalid customer.");
 
   let itinerary = undefined;
-  const startDate =convertStringToDate(moment(visitDate).format("YYYY-MM-DD"),0,0,0);
+  const startDate =convertStringToDate(moment(visitStart).format("YYYY-MM-DD"),0,0,0);
   const endDate = startDate.add(1,'days');
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,
-    visitDate: { $gte: startDate, $lt: endDate },
+    visitStart: { $gte: startDate, $lt: endDate },
   });
   if (itinerary) {
-    // visitDate 不许更新,只能创建一次
+    // visitStart 不许更新,只能创建一次
     if (latitude) {
       itinerary.latitude = latitude;
     }
@@ -234,6 +235,10 @@ router.post("/", async (req, res) => {
     if (activities) {
       itinerary.activities = activities;
     }
+    if ( visitEnd) {
+      itinerary.visitEnd = visitEnd;
+    }
+    itineray.updatedDate = new Date(); 
   } else {
     itinerary = new Itinerary({
       salesmanId,
@@ -243,7 +248,8 @@ router.post("/", async (req, res) => {
       latitude,
       longitude,
       photoName,
-      visitDate,
+      visitStart,
+      visitEnd,
       visitNote,
       activities,
       createdDate: new Date(),
@@ -296,6 +302,7 @@ router.put("/:id", async (req, res) => {
     longitude,
     visitNote,
     activities,
+    visitEnd,
   } = req.body;
 
   let itinerary = await Itinerary.findById(req.params.id);
@@ -327,9 +334,12 @@ router.put("/:id", async (req, res) => {
     itinerary.visitNote = visitNote;
   }
   if (activities) {
-    itenerary.activities = activities;
+    itinerary.activities = activities;
   }
-
+  if (visitEnd) {
+    itinerary.visitEnd = visitEnd;
+  }
+  itinerary.updatedDate = new Date();
   itinerary = await itinerary.save({});
   res.send(itinerary);
 });
