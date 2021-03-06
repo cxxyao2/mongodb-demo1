@@ -16,7 +16,7 @@ const ChannelSchema = new mongoose.Schema({
   contactPerson: {
     type: String,
     required: true,
-    minlength: 2,
+    minlength: 3,
     maxlength: 50,
   },
   phone: {
@@ -38,17 +38,22 @@ const ChannelSchema = new mongoose.Schema({
     max: 4,
     default: 1,
   },
-  closeReason: {
+  status: {
     type: Number,
     required: true,
+    min: 1,
+    max: 2,
+    default: 1,
+  },
+  closeType: {
+    type: Number,
     min: 1,
     max: 3,
     default: 2,
   },
-  reasonDetails: {
+  reasons: {
     type: String,
-    minlength: 5,
-    maxlength: 50,
+    maxlength: 1000,
   },
   responsible: {
     type: mongoose.Schema.Types.ObjectId,
@@ -80,8 +85,9 @@ function validateChannel(Channel) {
     phone: Joi.string().min(5).max(50).required(),
     email: Joi.string().email().required(),
     level: Joi.number().min(1).max(4).required(),
-    closeReason: Joi.number().min(1).max(3),
-    reasonDetails: Joi.string().min(5).max(50),
+    status: Joi.number().min(1).max(2).required(),
+    closeType: Joi.number().min(1).max(3),
+    reasons: Joi.string().min(5).max(1000),
     responsible: Joi.objectId().required(),
     collaborator: Joi.objectId(),
   });

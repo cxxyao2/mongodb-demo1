@@ -1704,3 +1704,40 @@
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-26T03:05:46.308Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2021-02-28T16:20:24.930Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-02-28T16:20:25.006Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-05T20:46:44.967Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-05T20:46:44.997Z"}
+{"message":"Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at /Users/admin/mycode/products/express_server1/routes/channels.js:13:14","level":"error","timestamp":"2021-03-06T03:40:42.172Z"}
+{"message":"Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at /Users/admin/mycode/products/express_server1/routes/channels.js:13:14","level":"error","timestamp":"2021-03-06T03:49:12.377Z"}
+{"message":"Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at /Users/admin/mycode/products/express_server1/routes/channels.js:13:14","level":"error","timestamp":"2021-03-06T03:52:37.875Z"}
+{"message":"Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at /Users/admin/mycode/products/express_server1/routes/channels.js:20:14","level":"error","timestamp":"2021-03-06T04:07:18.495Z"}
+{"message":"Assignment to constant variable.","stack":"TypeError: Assignment to constant variable.\n    at /Users/admin/mycode/products/express_server1/routes/channels.js:20:14","level":"error","timestamp":"2021-03-06T04:07:47.821Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:08:01.467Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:08:01.516Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:12:56.207Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:12:56.240Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:14:33.412Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:14:33.446Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:16:40.256Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:16:40.302Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:17:53.543Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:17:53.576Z"}
+{"message":"Cast to number failed for value \"1\" at path \"status\" for model \"Channel\"","stack":"CastError: Cast to number failed for value \"1\" at path \"status\" for model \"Channel\"\n    at model.Query.exec (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/query.js:4381:21)\n    at model.Query.Query.then (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/query.js:4473:15)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)","stringValue":"\"1\"","kind":"number","value":1,"path":"status","reason":null,"level":"error","timestamp":"2021-03-06T04:18:05.823Z"}
+{"message":"Cast to number failed for value \"1\" at path \"status\" for model \"Channel\"","stack":"CastError: Cast to number failed for value \"1\" at path \"status\" for model \"Channel\"\n    at model.Query.exec (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/query.js:4381:21)\n    at model.Query.Query.then (/Users/admin/mycode/products/express_server1/node_modules/mongoose/lib/query.js:4473:15)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)","stringValue":"\"1\"","kind":"number","value":1,"path":"status","reason":null,"level":"error","timestamp":"2021-03-06T04:19:40.082Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:19:50.206Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:19:50.249Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:29:09.449Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:29:09.482Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:29:48.414Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:29:48.450Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:33:33.768Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:33:33.806Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:34:31.525Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:34:31.569Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:36:44.812Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:36:44.861Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:37:12.265Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:37:12.312Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:38:43.225Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:38:43.266Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-06T04:42:16.778Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-06T04:42:16.861Z"}

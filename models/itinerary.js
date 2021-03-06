@@ -15,17 +15,17 @@ const Itinerary = mongoose.model(
       type: Date,
       default: Date.now,
     },
-     visitEnd: {
+    visitEnd: {
       type: Date,
       default: Date.now,
     },
     visitNote: {
-    type: String,
-    trim: true,
-    minlength:10,
-    maxlength:1000
-  },
-  activities:  [String],
+      type: String,
+      trim: true,
+      minlength: 10,
+      maxlength: 1000,
+    },
+    activities: [String],
     createdDate: {
       type: Date,
       default: Date.now,
@@ -40,14 +40,14 @@ const Itinerary = mongoose.model(
 function validateItinerary(itinerary) {
   const schema = Joi.object({
     salesmanId: Joi.objectId().required(),
-    customerId:  Joi.objectId().required(),
+    customerId: Joi.objectId().required(),
     photoName: Joi.string(),
     latitude: Joi.number().min(0),
     longitude: Joi.number().min(0),
     visitStart: Joi.date(),
     visitEnd: Joi.date(),
-    activities:Joi.array().min(1);
-    visitNote: Joi.string().min(10).max(1000)
+    activities: Joi.array().min(1),
+    visitNote: Joi.string().min(10).max(1000),
   });
 
   return schema.validate(itinerary);

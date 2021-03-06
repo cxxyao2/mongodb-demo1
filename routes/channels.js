@@ -4,20 +4,17 @@ const express = require("express");
 const admin = require("../middleware/admin");
 const auth = require("../middleware/auth");
 const router = express.Router();
-const moment = require("moment");
 
 router.get("/", async (req, res) => {
-   const channels = undefined;
-  
-    let {name} = req.query;
-    if (name) {
-  
-// 列name 中包含参数name，不区分大小写
-   channels = await Channel.findOne({name:{$regex:name,$options:"$i"}}).sort("name");
-    } else {
+  let channels = undefined;
 
-   channels = await Channel.find().sort("name");
-    }
+  let { name } = req.query;  // {title:/教/}.  $regex: name, $options: "$i"  name: /ALEX/,
+  // const arr = await Movie.find({ year: { $gte: 1980, $lte: 1989 } });
+  if (name) {
+    channels = await Channel.find({ status: 1,name:{ $regex: name, $options: "$i"}}).sort("-createDate");
+  } else {
+    channels = await Channel.find().sort("name");
+  }
 
   res.send(channels);
 });
@@ -26,16 +23,29 @@ router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const responsible = await User.findById(req.body.responsible);
-  if (!responsible) return res.status(400).send("Invalid responsible.");
+  const responsibleObj = await User.findById(req.body.responsible);
+  if (!responsibleObj) return res.status(400).send("Invalid responsible.");
 
-  let collaborator;
-  if (req.body.collaborator) {
-    collaborator = await User.findById(req.body.collaborator);
-    if (!collaborator) return res.status(400).send("Invalid collaborator.");
+  let collaboratorObj;
+  if (req.body.collaborator && req.body.collaborator.trim() !== "") {
+    collaboratorObj = await User.findById(req.body.collaborator);
+    if (!collaboratorObj) return res.status(400).send("Invalid collaborator.");
   }
 
-  const { name, address, contactPerson, phone, email, level } = req.body;
+  const {
+    name,
+    address,
+    contactPerson,
+    phone,
+    email,
+    level,
+    status,
+    closeType,
+    reason,
+    responsible,
+    collaborator,
+  } = req.body;
+
   const channel = new Channel({
     name,
     address,
@@ -43,18 +53,19 @@ router.post("/", async (req, res) => {
     phone,
     email,
     level,
-    responsible: responsible._id,
+    status,
+    responsible,
   });
   if (collaborator) {
-    channel.collaborator = collaborator._id;
+    channel.collaborator = collaborator;
   }
 
-  if (closeReason) {
-    channel.closeReason = closeReason;
+  if (closeType) {
+    channel.closeType = closeType;
   }
 
-  if (reasonDetails) {
-    channel.reasonDetails = reasonDetails;
+  if (reasons) {
+    channel.reasons = reasons;
   }
 
   await channel.save();
@@ -72,36 +83,39 @@ router.put("/:id", async (req, res) => {
     phone,
     email,
     level,
-    closeReason,
-    reasonDetails,
+    status,
+    closeType,
+    reasons,
     responsible,
     collaborator,
   } = req.body;
 
-  const updateDate = moment();
-  const channel = await Channel.findByIdAndUpdate(
-    req.params.id,
-    {
-      name,
-      address,
-      contactPerson,
-      phone,
-      email,
-      level,
-      closeReason,
-      reasonDetails,
-      responsible,
-      collaborator,
-      updateDate,
-    },
-    {
-      new: true,
-    }
-  );
-
-  if (!channel)
+  const channel = await Channel.findById(req.params.id);
+  if (!channel) {
     return res.status(404).send("The Channel with the given ID was not found.");
+  }
 
+  channel.name = name;
+  channel.address = address;
+  channel.contactPerson = contactPerson;
+  channel.phone = phone;
+  channel.email = email;
+  channel.level = level;
+  channel.status = status;
+  channel.responsible = responsible;
+  channel.updateDate = new Date();
+
+  if (!closeType) {
+    channel.closeType = closeType;
+  }
+
+  if (!reasons) {
+    channel.reasons = reasons;
+  }
+
+  if (!collaborator) {
+    channel.collaborator = collaborator;
+  }
   res.send(channel);
 });
 

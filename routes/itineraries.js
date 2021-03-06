@@ -2,7 +2,7 @@ const Fawn = require("fawn");
 // Fawn.init(mongoose);
 const express = require("express");
 const router = express.Router();
-const  moment = require(“moment”);
+const moment = require("moment");
 
 const { Itinerary, validate } = require("../models/itinerary");
 const { User } = require("../models/user"); // salesman must be a valid user
@@ -208,8 +208,13 @@ router.post("/", async (req, res) => {
   if (!customerOld) return res.status(400).send("Invalid customer.");
 
   let itinerary = undefined;
-  const startDate =convertStringToDate(moment(visitStart).format("YYYY-MM-DD"),0,0,0);
-  const endDate = startDate.add(1,'days');
+  const startDate = convertStringToDate(
+    moment(visitStart).format("YYYY-MM-DD"),
+    0,
+    0,
+    0
+  );
+  const endDate = startDate.add(1, "days");
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,
@@ -235,10 +240,10 @@ router.post("/", async (req, res) => {
     if (activities) {
       itinerary.activities = activities;
     }
-    if ( visitEnd) {
+    if (visitEnd) {
       itinerary.visitEnd = visitEnd;
     }
-    itineray.updatedDate = new Date(); 
+    itineray.updatedDate = new Date();
   } else {
     itinerary = new Itinerary({
       salesmanId,
