@@ -1,4 +1,4 @@
-const { Channel, validate } = require("../models/channel");
+const { Channel, validate,validateId,validateCollaborator,  validateReasons } = require("../models/channel");
 const { User } = require("../models/user");
 const express = require("express");
 const admin = require("../middleware/admin");
@@ -11,15 +11,16 @@ router.get("/", async (req, res) => {
   let { name } = req.query;  // {title:/教/}.  $regex: name, $options: "$i"  name: /ALEX/,
   // const arr = await Movie.find({ year: { $gte: 1980, $lte: 1989 } });
   if (name) {
-    channels = await Channel.find({ status: 1,name:{ $regex: name, $options: "$i"}}).sort("-createDate");
+    channels = await Channel.find({ name:{ $regex: name, $options: "$i"}}).sort("-level").select("-createDate -updateDate  -__v");
   } else {
-    channels = await Channel.find().sort("name");
+    channels = await Channel.find().sort("name").select("-createDate -updateDate -__v");
   }
 
   res.send(channels);
 });
 
 router.post("/", async (req, res) => {
+  
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -41,7 +42,7 @@ router.post("/", async (req, res) => {
     level,
     status,
     closeType,
-    reason,
+    reasons,
     responsible,
     collaborator,
   } = req.body;
@@ -105,17 +106,17 @@ router.put("/:id", async (req, res) => {
   channel.responsible = responsible;
   channel.updateDate = new Date();
 
-  if (!closeType) {
+  if (closeType) {
     channel.closeType = closeType;
   }
 
-  if (!reasons) {
     channel.reasons = reasons;
-  }
 
-  if (!collaborator) {
+
+  if (collaborator) {
     channel.collaborator = collaborator;
   }
+  await channel.save();
   res.send(channel);
 });
 

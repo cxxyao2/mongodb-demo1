@@ -51,10 +51,6 @@ const ChannelSchema = new mongoose.Schema({
     max: 3,
     default: 2,
   },
-  reasons: {
-    type: String,
-    maxlength: 1000,
-  },
   responsible: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -63,6 +59,11 @@ const ChannelSchema = new mongoose.Schema({
   collaborator: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  reasons: {
+    type: String,
+    maxlength: 1000,
+    default:""
   },
   createDate: {
     type: Date,
@@ -77,8 +78,10 @@ const ChannelSchema = new mongoose.Schema({
 });
 const Channel = mongoose.model("Channel", ChannelSchema);
 
+// required fields
 function validateChannel(Channel) {
   const schema = Joi.object({
+    _id:Joi.objectId(),
     name: Joi.string().min(5).max(50).required(),
     address: Joi.string().min(5).max(200).required(),
     contactPerson: Joi.string().min(5).max(50).required(),
@@ -86,14 +89,44 @@ function validateChannel(Channel) {
     email: Joi.string().email().required(),
     level: Joi.number().min(1).max(4).required(),
     status: Joi.number().min(1).max(2).required(),
-    closeType: Joi.number().min(1).max(3),
-    reasons: Joi.string().min(5).max(1000),
+    closeType:Joi.number(),
     responsible: Joi.objectId().required(),
-    collaborator: Joi.objectId(),
+    collaborator:Joi.objectId(),
+    reasons:Joi.string().max(1000).allow(''),
   });
-
   return schema.validate(Channel);
 }
+
+
+
+   
+
+// supplementary fields
+function validateChannelId(obj) {
+  const schema = Joi.object({
+   _id:Joi.objectId()});
+  return schema.validate(obj)
+}
+
+function validateCollaborator(obj) {
+  const schema = Joi.object({
+  collaborator:Joi.objectId()});
+  return schema.validate(obj);
+}
+
+
+function validateReasons(obj) {
+  const schema = Joi.object({
+    reasons:Joi.string().max(1000).allow('')});
+  return schema.validate(obj);
+}
+
+
+
+exports.validateId = validateChannelId;
+exports.validateCollaborator = validateCollaborator;
+exports.validateReasons = validateReasons;
+
 
 exports.ChannelSchema = ChannelSchema;
 exports.Channel = Channel;
