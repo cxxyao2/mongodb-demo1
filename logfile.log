@@ -1798,3 +1798,12 @@
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-08T02:13:55.948Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-08T03:38:08.008Z"}
 {"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-08T03:38:08.036Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-10T01:30:35.635Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-10T01:30:35.709Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-10T19:26:20.513Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-10T19:26:20.567Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-11T18:38:11.937Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-11T18:38:11.985Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-13T02:44:26.054Z"}
+{"level":"info","message":"Connected to 'mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-03-13T02:44:26.126Z"}
+{"message":"Unexpected token } in JSON at position 92","stack":"SyntaxError: Unexpected token } in JSON at position 92\n    at JSON.parse (<anonymous>)\n    at parse (/Users/admin/mycode/products/express_server1/node_modules/body-parser/lib/types/json.js:89:19)\n    at /Users/admin/mycode/products/express_server1/node_modules/body-parser/lib/read.js:121:18\n    at invokeCallback (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:224:16)\n    at done (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/Users/admin/mycode/products/express_server1/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (_stream_readable.js:1220:12)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)","expose":true,"statusCode":400,"status":400,"body":"{\n    \"name\":\"77777777\",\n    \"email\":\"77777777@gmail.com\",\n     \"password\":\"77777777\",\n    \n}","type":"entity.parse.failed","level":"error","timestamp":"2021-03-13T02:46:53.771Z"}
