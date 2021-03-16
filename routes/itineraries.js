@@ -24,9 +24,11 @@ router.get("/report", async (req, res) => {
   let salesmanName = req.query.salesman;
   let data = {};
 
-  // formDate, toDate, format: yyyyMMdd
+
   const startYYMMDD = convertStringToDate(fromDate, 0, 0, 0);
   const endYYMMDD = convertStringToDate(toDate, 23, 59, 59);
+
+
 
   await Itinerary.aggregate(
     [
@@ -208,13 +210,9 @@ router.post("/", async (req, res) => {
   if (!customerOld) return res.status(400).send("Invalid customer.");
 
   let itinerary = undefined;
-  const startDate = convertStringToDate(
-    moment(visitStart).format("YYYY-MM-DD"),
-    0,
-    0,
-    0
-  );
-  const endDate = startDate.add(1, "days");
+  const d1 =  new Date(visitStart);
+  const startDate = new Date(d1.getYear(),d1.getMonth(),d1.getDay(),0,0,0);
+  const endDate = new Date(startDate + 1*86400000) ; // 1 day = 1* 86400000 milleseconds
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,

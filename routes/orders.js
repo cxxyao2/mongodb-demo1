@@ -27,23 +27,24 @@ router.post("/", async (req, res) => {
   const product = await Product.findById(req.body.productId);
   if (!product) return res.status(400).send("Invalid product.");
 
-  const stock = await Stock.findOne({
-    product: req.body.productId,
-    quantity: { $gte: 0 },
-  });
+  // TODO not modify stock
+  // const stock = await Stock.findOne({
+  //   product: req.body.productId,
+  //   quantity: { $gte: 0 },
+  // });
 
-  if (stock === undefined) {
-    return res.status(400).send("No stock available.");
-  } else {
-    const newQuantity = stock.quantity - req.body.quantity;
-    const newStock = await Stock.findByIdAndUpdate(
-      stock._id,
-      { quantity: newQuantity },
-      {
-        new: true,
-      }
-    );
-  }
+  // if (stock === undefined) {
+  //   return res.status(400).send("No stock available.");
+  // } else {
+  //   const newQuantity = stock.quantity - req.body.quantity;
+  //   const newStock = await Stock.findByIdAndUpdate(
+  //     stock._id,
+  //     { quantity: newQuantity },
+  //     {
+  //       new: true,
+  //     }
+  //   );
+  // }
 
   const order = new Order({
     customer: req.body.customerId,

@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: 0,
-    max: 255,
+    max: 9999,
   },
   price: {
     type: Number,
@@ -29,7 +29,7 @@ const orderSchema = new mongoose.Schema({
   coupon: {
     type: String,
     trim: true,
-    minlength: 5,
+    minlength: 1,
     maxlength: 100,
   },
   customerPaid: {
@@ -55,9 +55,9 @@ function validateOrder(order) {
   const schema = Joi.object({
     customerId: Joi.objectId().required(),
     productId: Joi.objectId().required(),
-    quantity: Joi.number().required().min(0).max(250),
+    quantity: Joi.number().required().min(0).max(9999),
     price: Joi.number().required().min(0).max(1000),
-    coupon: Joi.string().min(5).max(100),
+    coupon: Joi.string().min(1).max(100),
   });
 
   return schema.validate(order);
