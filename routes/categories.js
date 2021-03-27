@@ -26,6 +26,7 @@ router.put("/:id", async (req, res) => {
 
   const category = await Category.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
+    id: req.body.id,
   });
 
   if (!category)
@@ -48,10 +49,16 @@ router.delete("/:id", [auth, admin], async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const category = await Category.findById(req.params.id);
+  let category = await Category.findById(req.params.id);
+//let category = await Category.find({id: req.params.id}).select("id name -_id");
 
-  if (!category)
-    return res.status(404).send("The Movie with the given ID was not found.");
+ 
+    if (!category){
+       return res.status(404).send("The Movie with the given ID was not found.");
+     }
+   
+
+   
 
   res.send(category);
 });

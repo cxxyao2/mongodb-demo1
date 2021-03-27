@@ -25,7 +25,7 @@ const Itinerary = mongoose.model(
       minlength: 10,
       maxlength: 1000,
     },
-    activities: [String],
+    activities: String,
     createdDate: {
       type: Date,
       default: Date.now,
@@ -46,7 +46,7 @@ function validateItinerary(itinerary) {
     longitude: Joi.number(),
     visitStart: Joi.date(),
     visitEnd: Joi.date(),
-    activities: Joi.array().min(1),
+    activities: Joi.string(),
     visitNote: Joi.string().min(10).max(1000),
   });
 

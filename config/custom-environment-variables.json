@@ -1,0 +1,10 @@
+{
+  "jwtPrivateKey": "app_jwtPrivateKey",
+  "mail": {
+    "host": "app_host",
+    "user": "app_user",
+    "password": "app_password"
+  },
+  "db": "app_db",
+  "port": "app_dbPort"
+}

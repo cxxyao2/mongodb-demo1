@@ -188,6 +188,7 @@ router.get("/report", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log('req', JSON.stringify(req.body));
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -211,8 +212,8 @@ router.post("/", async (req, res) => {
 
   let itinerary = undefined;
   const d1 =  new Date(visitStart);
-  const startDate = new Date(d1.getYear(),d1.getMonth(),d1.getDay(),0,0,0);
-  const endDate = new Date(startDate + 1*86400000) ; // 1 day = 1* 86400000 milleseconds
+  const startDate = new Date(d1.getFullYear(),d1.getMonth(),d1.getDate(),0,0,0);
+  const endDate = new Date(Date.parse(startDate) + 1*86400000) ; // 1 day= 2^*60*60*1000 milleseconds
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,
@@ -226,8 +227,8 @@ router.post("/", async (req, res) => {
     if (longitude) {
       itinerary.longitude = longitude;
     }
-    if (customer) {
-      itinerary.customerName = customer.name;
+    if (customerOld) {
+      itinerary.customerName = customerOld.name;
     }
     if (photoName) {
       itinerary.photoName = photoName;
@@ -241,8 +242,9 @@ router.post("/", async (req, res) => {
     if (visitEnd) {
       itinerary.visitEnd = visitEnd;
     }
-    itineray.updatedDate = new Date();
+    itinerary.updatedDate = new Date();
   } else {
+   
     itinerary = new Itinerary({
       salesmanId,
       salesmanName: salesman.name,
@@ -260,27 +262,29 @@ router.post("/", async (req, res) => {
     });
   }
 
-  if (!customerOld) {
+  if (customerOld) {
+
     itinerary = await itinerary.save();
-    res.send(itinerary);
-  } else {
-    try {
-      new Fawn.Task()
-        .save("itineraries", itinerary)
-        .update(
-          "customers",
-          { _id: customerId },
-          {
-            longitude: longitude,
-            latitude: latitude,
-          }
-        )
-        .run();
-      res.send(itinerary);
-    } catch (ex) {
-      console.log("error is ", ex);
-      res.status(500).send("Something failed.");
-    }
+    res.status(200).send("Itinerary is saved successfully");
+  // } else {
+  //   try {
+  //     new Fawn.Task()
+  //       .save("itineraries", itinerary)
+  //       .update(
+  //         "customers",
+  //         { _id: customerId },
+  //         {
+  //           longitude: longitude,
+  //           latitude: latitude,
+  //         }
+  //       )
+  //       .run();
+  //    //  res.send(itinerary);
+  //    res.status(200).send("Itinerary is saved successfully");
+  //   } catch (ex) {
+  //     console.log("error is ", ex);
+  //     res.status(500).send("Something failed.");
+  //   }
   }
 });
 

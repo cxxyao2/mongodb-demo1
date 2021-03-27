@@ -16,8 +16,9 @@ router.post("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-
-  let user = await User.findOne({ $or:[{ email: req.body.email},{ name: req.body.email}]});
+  let user = await User.findOne({
+    $or: [{ email: req.body.email }, { name: req.body.email }],
+  });
   if (!user) return res.status(400).send("Invalid email or password");
   if (user.validity === 0) return res.status(400).send(lockedMessage);
 
@@ -79,7 +80,7 @@ router.post("/send-reset-email", async (req, res) => {
       "minutes"
     );
     await tokenRecord.save();
-    await sendResetPwdEmail(url);
+    await sendResetPwdEmail(url, email);
     return res.status(200).send("A reset password email has been sent.");
   } catch (error) {
     return res.status(400).send(error.message);
@@ -101,7 +102,6 @@ router.post("/reset-password", async (req, res) => {
 
   var decoded = jwt.verify(token, config.get("jwtPrivateKey"));
 
-  
   let email = decoded.email;
   let user = await User.findOne({ email: email });
 

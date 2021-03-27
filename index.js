@@ -4,6 +4,7 @@ const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser"); // Parse incoming request bodies in a middleware before your handlers, available under the req.body property.
 const cors = require("cors");
 const morgan = require("morgan");
+const config = require("config");
 
 const logger = require("./middleware/logger");
 
@@ -62,7 +63,7 @@ app.use(logger);
 //   res.render('index', { title: 'My Express App', message: 'Hello'});
 // });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || config.get("port");
 const server = app.listen(port, () =>
   winston.info(`Listening on port ${port}...`)
 );

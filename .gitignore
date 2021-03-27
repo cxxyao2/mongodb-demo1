@@ -1,9 +1,8 @@
 node_modules/
 coverage/
 uploads/
-config/
 tmp/
-utils/
+deletes/
 
 # macOS
 .DS_Store

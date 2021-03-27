@@ -27,24 +27,5 @@ deDebugger('Connected to the database...');
 
 \$DEBGU=app:db nodemon index.js
 
-## unit test user
-
-{
-
-    "email": "88888888@gmail.com",
-    "password":"12345678"
-
-}
-}
-----------------
-{
-"name" : "77777777",
-"email": "77777777@gmail.com",
-"password":"77777777"
-}
-
-{
-"\_id": "6031c5db1f6b612ad4af5357",
-"name": "77777777",
-"email": "77777777@gmail.com"
-}
+## 因为要使用angular,修改了category.js和 categories.js文件,需要恢复,为了react的正确使用
+ TODO
