@@ -6,10 +6,9 @@ const config = require("config");
 async function main() {
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
+  // let testAccount = await nodemailer.createTestAccount();
 
-  let testAccount = await nodemailer.createTestAccount();
-
-  // create reusable transporter object using the default SMTP transport
+  // create reusable transporter object using the default SMTP transport TODO
   let transporter = nodemailer.createTransport({
     host: config.get("mail.host"),
     port: 587,
@@ -19,6 +18,7 @@ async function main() {
       pass: config.get("mail.password"), // generated ethereal password
     },
   });
+
 
   // send mail with defined transport object
   let info = await transporter.sendMail({
@@ -40,7 +40,7 @@ async function main() {
 // 可以执行这段代码：   main().catch(console.error);
 
 // 遗忘密码后,发重新设置信
-async function sendResetPwdEmail(url,destinationEmail) {
+async function sendResetPwdEmail(url, destinationEmail) {
   let transporter = nodemailer.createTransport({
     host: config.get("mail.host"),
     port: 587,

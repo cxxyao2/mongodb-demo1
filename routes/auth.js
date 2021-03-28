@@ -69,8 +69,12 @@ router.put("/", async (req, res) => {
 router.post("/send-reset-email", async (req, res) => {
   const email = req.body.email;
   const token = jwt.sign({ email: email }, config.get("jwtPrivateKey"));
-  //  http://xxx.xxx.xxx.xxx:300/xxx?token=xxxx TODO
-  let url = `http://localhost:3000/reset-password?token=${token}`;
+
+  //  http://xxx.xxx.xxx.xxx:300/xxx?token=xxxx TODO  config.get("frontendUrl")
+  //  let url = `http://localhost:3000/reset-password?token=${token}`;
+  // local frontendUrl: http://localhost:3000
+
+  let url = `${config.get("frontendUrl")}/reset-password?token=${token}`;
   try {
     const tokenRecord = new ResetPwdToken();
     tokenRecord.token = token;

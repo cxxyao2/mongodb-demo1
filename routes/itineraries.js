@@ -13,6 +13,7 @@ const { convertStringToDate } = require("../utils/format_convert");
 
 // xxxx.xxxx.xxxx.xxx:xxx/itineriers/report?fromdata=yyyymmdd&&todate=yyyymmdd
 router.get("/report", async (req, res) => {
+  console.log("reqeury", req.query);
   let itineraries = {};
   if (!req.query.fromdate) {
     itineraries = await Itinerary.find().sort("visitStart");
@@ -24,11 +25,8 @@ router.get("/report", async (req, res) => {
   let salesmanName = req.query.salesman;
   let data = {};
 
-
   const startYYMMDD = convertStringToDate(fromDate, 0, 0, 0);
   const endYYMMDD = convertStringToDate(toDate, 23, 59, 59);
-
-
 
   await Itinerary.aggregate(
     [
@@ -188,7 +186,7 @@ router.get("/report", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log('req', JSON.stringify(req.body));
+  console.log("req", JSON.stringify(req.body));
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -211,9 +209,16 @@ router.post("/", async (req, res) => {
   if (!customerOld) return res.status(400).send("Invalid customer.");
 
   let itinerary = undefined;
-  const d1 =  new Date(visitStart);
-  const startDate = new Date(d1.getFullYear(),d1.getMonth(),d1.getDate(),0,0,0);
-  const endDate = new Date(Date.parse(startDate) + 1*86400000) ; // 1 day= 2^*60*60*1000 milleseconds
+  const d1 = new Date(visitStart);
+  const startDate = new Date(
+    d1.getFullYear(),
+    d1.getMonth(),
+    d1.getDate(),
+    0,
+    0,
+    0
+  );
+  const endDate = new Date(Date.parse(startDate) + 1 * 86400000); // 1 day= 2^*60*60*1000 milleseconds
   itinerary = await Itinerary.findOne({
     salesmanId: salesmanId,
     customerId: customerId,
@@ -244,7 +249,6 @@ router.post("/", async (req, res) => {
     }
     itinerary.updatedDate = new Date();
   } else {
-   
     itinerary = new Itinerary({
       salesmanId,
       salesmanName: salesman.name,
@@ -263,28 +267,27 @@ router.post("/", async (req, res) => {
   }
 
   if (customerOld) {
-
     itinerary = await itinerary.save();
     res.status(200).send("Itinerary is saved successfully");
-  // } else {
-  //   try {
-  //     new Fawn.Task()
-  //       .save("itineraries", itinerary)
-  //       .update(
-  //         "customers",
-  //         { _id: customerId },
-  //         {
-  //           longitude: longitude,
-  //           latitude: latitude,
-  //         }
-  //       )
-  //       .run();
-  //    //  res.send(itinerary);
-  //    res.status(200).send("Itinerary is saved successfully");
-  //   } catch (ex) {
-  //     console.log("error is ", ex);
-  //     res.status(500).send("Something failed.");
-  //   }
+    // } else {
+    //   try {
+    //     new Fawn.Task()
+    //       .save("itineraries", itinerary)
+    //       .update(
+    //         "customers",
+    //         { _id: customerId },
+    //         {
+    //           longitude: longitude,
+    //           latitude: latitude,
+    //         }
+    //       )
+    //       .run();
+    //    //  res.send(itinerary);
+    //    res.status(200).send("Itinerary is saved successfully");
+    //   } catch (ex) {
+    //     console.log("error is ", ex);
+    //     res.status(500).send("Something failed.");
+    //   }
   }
 });
 
