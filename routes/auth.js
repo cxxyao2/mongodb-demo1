@@ -10,6 +10,7 @@ const moment = require("moment");
 const router = express.Router();
 const { sendResetPwdEmail } = require("../startup/email.js");
 
+// login 
 router.post("/", async (req, res) => {
   const lockedMessage =
     "Your account has been locked.Please contact the administrator.";

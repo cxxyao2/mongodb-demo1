@@ -16,3 +16,52 @@
 {"level":"info","message":"Connected to mongodb+srv://cxx2006:hans2006cxx@cluster0.pa8mh.mongodb.net/test...","timestamp":"2021-03-28T14:29:24.318Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-28T14:36:19.057Z"}
 {"level":"info","message":"Connected to mongodb+srv://cxx2006:hans2006cxx@cluster0.pa8mh.mongodb.net/test...","timestamp":"2021-03-28T14:36:19.433Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-03-28T15:15:18.718Z"}
+{"level":"info","message":"Connected to mongodb+srv://cxx2006:hans2006cxx@cluster0.pa8mh.mongodb.net/test...","timestamp":"2021-03-28T15:15:19.113Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-01T14:04:19.508Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-01T14:04:19.574Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-01T20:58:20.691Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-01T20:58:20.756Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-02T12:31:49.872Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-02T12:31:49.924Z"}
+{"message":"Cast to ObjectId failed for value \"null\" at path \"_id\" for model \"Product\"","stack":"CastError: Cast to ObjectId failed for value \"null\" at path \"_id\" for model \"Product\"\n    at model.Query.exec (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4381:21)\n    at model.Query.Query.then (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4473:15)","stringValue":"\"null\"","kind":"ObjectId","value":"null","path":"_id","reason":{},"level":"error","timestamp":"2021-04-02T12:52:00.459Z"}
+{"message":"Cast to ObjectId failed for value \"null\" at path \"_id\" for model \"Product\"","stack":"CastError: Cast to ObjectId failed for value \"null\" at path \"_id\" for model \"Product\"\n    at model.Query.exec (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4381:21)\n    at model.Query.Query.then (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4473:15)","stringValue":"\"null\"","kind":"ObjectId","value":"null","path":"_id","reason":{},"level":"error","timestamp":"2021-04-02T12:52:02.525Z"}
+{"message":"Cast to ObjectId failed for value \"a06\" at path \"_id\" for model \"Product\"","stack":"CastError: Cast to ObjectId failed for value \"a06\" at path \"_id\" for model \"Product\"\n    at model.Query.exec (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4381:21)\n    at model.Query.Query.then (/Users/admin/mycode/products/share_backend/node_modules/mongoose/lib/query.js:4473:15)","stringValue":"\"a06\"","kind":"ObjectId","value":"a06","path":"_id","reason":{},"level":"error","timestamp":"2021-04-02T19:47:16.168Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-03T02:24:22.454Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-03T02:24:22.514Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-03T16:30:44.824Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-03T16:30:44.877Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-04T16:01:16.618Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-04T16:01:16.662Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T01:24:08.022Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T01:24:08.045Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T12:08:23.086Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T12:08:23.127Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T12:23:09.166Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T12:23:09.198Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T19:39:09.849Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T19:39:09.883Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T19:43:35.716Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T19:43:35.760Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T19:45:44.664Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T19:45:44.691Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T19:47:35.625Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T19:47:35.649Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T20:07:13.810Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T20:07:13.833Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-05T20:08:39.635Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-05T20:08:39.659Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T12:22:15.811Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T12:22:15.904Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T17:20:21.303Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T17:20:21.324Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T18:13:35.712Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T18:13:35.782Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T19:11:15.746Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T19:11:15.775Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T19:53:17.372Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T19:53:17.407Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T22:16:45.680Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T22:16:45.785Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2021-04-06T22:38:38.278Z"}
+{"level":"info","message":"Connected to mongodb://localhost:27017/mongo-exercises...","timestamp":"2021-04-06T22:38:38.310Z"}
