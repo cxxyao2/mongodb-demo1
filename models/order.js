@@ -63,6 +63,9 @@ function validateOrder(order) {
     quantity: Joi.number().required().min(0).max(9999),
     price: Joi.number().required().min(0).max(1000),
     coupon: Joi.string().min(1).max(100),
+    customerPaid: Joi.boolean(),
+    enRoute:Joi.boolean(),
+    customerReceived: Joi.boolean(),
   });
 
   return schema.validate(order);

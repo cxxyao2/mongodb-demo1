@@ -9,7 +9,7 @@ const photoPathinServer = '/uploads/';
 
 router.get('/download', function(req,res) {
   try {
-    // xxx.xxx.xxxx.xxx:xxx/download?filename=....jpeg
+    // e.g. http://localhost:5000/api/files/download?filename=palette1.jpeg
     var file = process.cwd() + photoPathinServer + req.query.filename;
 
     var filename = path.basename(file);

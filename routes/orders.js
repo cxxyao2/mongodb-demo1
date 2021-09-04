@@ -67,11 +67,11 @@ router.put("/:id", async (req, res) => {
   const product = await Product.findById(req.body.productId);
   if (!product) return res.status(400).send("Invalid product.");
 
-  const order = await Order.findById(req.params.id);
+  let order = await Order.findById(req.params.id);
   if (!order)
     return res.status(404).send("The Order with the given ID was not found.");
 
-  order = await Order.update(
+  order = await Order.updateOne(
     { _id: req.params.id },
     {
       $set: {
@@ -82,7 +82,7 @@ router.put("/:id", async (req, res) => {
         coupon: req.body.coupon,
         customerPaid: req.body.customerPaid,
         enRoute: req.body.enRoute,
-        customerReceived: req.body.customerReceived,
+        customerReceived: req.body.customerReceived
       },
     }
   );
@@ -90,7 +90,8 @@ router.put("/:id", async (req, res) => {
   res.send(order);
 });
 
-router.delete("/:id", [auth, admin], async (req, res) => {
+// router.delete("/:id", [auth, admin], async (req, res) => {
+router.delete("/:id",  async (req, res) => {
   const order = await Order.findByIdAndRemove(req.params.id);
 
   if (!order)
@@ -100,14 +101,15 @@ router.delete("/:id", [auth, admin], async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const order = await (await Order.findById(req.params.id))
-    .populate("productId", "name -_id")
-    .select("");
+  const order =  await Order.findById(req.params.id)
+    .populate("productId", "name -_id");
 
   if (!order)
     return res.status(404).send("The Order with the given ID was not found.");
 
   res.send(order);
 });
+
+
 
 module.exports = router;

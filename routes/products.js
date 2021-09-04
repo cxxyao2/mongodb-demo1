@@ -6,8 +6,13 @@ const auth = require("../middleware/auth");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const products = await Product.find().sort("name");
+  // get lanuguage from client.  in May 32,2021. 
+  // req.headers["accept-language"]
+ 
+  const products = await Product.find().sort("name"); 
+
   res.send(products);
+  // ok return res.jsonp({name:'hello'});
 });
 
 router.post("/", async (req, res) => {

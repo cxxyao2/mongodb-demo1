@@ -355,7 +355,7 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", [auth, admin], async (req, res) => {
-  const itinerary = await Movie.findByIdAndRemove(req.params.id);
+  const itinerary = await Itinerary.findByIdAndRemove(req.params.id);
 
   if (!itinerary)
     return res

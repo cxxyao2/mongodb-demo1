@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
+   console.log('client language', req.headers["accept-language"]);
   const customers = await Customer.find().sort("name");
   res.send(customers);
 });

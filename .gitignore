@@ -2,6 +2,7 @@ node_modules/
 coverage/
 uploadsbak/
 tmp/
+config/
 deletes/
 
 # macOS

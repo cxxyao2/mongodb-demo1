@@ -4,12 +4,14 @@
   "tokenExpiredMinute": "60",
   "pwdTryMax": "3",
   "port": "5000",
-  "jwtPrivateKey": "",
+  "jwtPrivateKey": "1234",
   "mail": {
-    "host": "",
-    "user": "",
-    "password": ""
+    "host": "smtp.gmail.com",
+    "user": "cxxyao2@gmail.com",
+    "password": "dcqurgvnfxbfafoz"
   },
-  "db": "",
-  "frontendUrl": ""
+  "db": "mongodb://localhost:27017/mongo-exercises",
+  "frontendUrl": "http://localhost:4200"
 }
+
+
